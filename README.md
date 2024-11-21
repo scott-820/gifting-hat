@@ -1,5 +1,5 @@
 # The Gifting Hat
-#### A Python class that accepts a dictionary of name pairs as a required input parameter and creates a gifting list for the group derived from the name pairs, and which conforms to a set of established and configurable rules.
+#### GiftingHat() is a Python class that accepts a dictionary of name pairs as a required input parameter and creates a gifting list for the group derived from the name pairs, and which conforms to a set of established and configurable rules.
 
 Many thanks to my children who deliberately scratched my Python itch by asking me to write this program for our family use.  They knew I couldn't resist...
 
