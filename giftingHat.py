@@ -168,13 +168,13 @@ def inputCSV(csvFileName: str) -> dict:
         sys.exit(f"{csvFileName} does not exist")
     else:
         reader = csv.reader(file)
+        # Check for correct headers once requirement is added
         for name1, name2 in reader:
             if name2 == "None" or name2 == "":
                 pairsD[name1] = None
             else:
                 pairsD[name1] = name2
         file.close()
-
     return pairsD       # Return a dictionary of pairs ready to pass into GiftingHat on initialization.
 
 def main():
@@ -198,7 +198,7 @@ def main():
         "Jillian" : "Shawn",
     } 
 
-    # If valid csv file present as command line, pairs will be replaced with csv input
+    # If valid csv file present as command line parameter, pairs will be replaced with csv input
     if len(sys.argv) == 2:
         csvFile = sys.argv[1]
         if not(csvFile.endswith(".csv")):
