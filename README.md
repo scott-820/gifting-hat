@@ -5,9 +5,14 @@ Many thanks to my children who deliberately scratched my Python itch by asking m
 
 The GiftingHat() class is contained within the file "giftingHat.py", which includes a main() function that exercises the class. Included in main() is the ability to accept a .csv file from the command line as input to the program.  See the section below regarding the inputCSV() function for usage and .csv formatting requirements.
 
+## To Do
+* ~~Add .csv file input via command line~~
+* Add requirement for .csv file header (NAME1, NAME2) to help with validation of .csv format
+<br>
+<br>
 ### Class Methods
-#### __init__(self, namePairs, crossGift=False, spousalGift=False)
-The init method will build a GiftHat() object and from the namePairs dictionary input and then:
+#### \_\_init__(self, namePairs, crossGift=False, spousalGift=False)
+The \_\_init__ method will build a GiftHat() object and from the namePairs dictionary input and then:
 * Construct a participants list -
     * The participants list will checked for uniqueness. If name conflicts are found, the user will be notified that the list of participants is not unique, and the program terminated.
 * Extend self.namePairs to contain bi-directional pairings - 
