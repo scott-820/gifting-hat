@@ -1,8 +1,8 @@
 Gift Pairings for 2024
 
-Jillian is giving to Cameron.
-Shawn is giving to Brian.
 Megan is giving to Shawn.
-Matt is giving to Jillian.
-Brian is giving to Matt.
+Matt is giving to Brian.
 Cameron is giving to Megan.
+Jillian is giving to Matt.
+Shawn is giving to Cameron.
+Brian is giving to Jillian.

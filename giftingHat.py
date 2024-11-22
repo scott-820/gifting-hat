@@ -196,9 +196,14 @@ def main():
         "Jillian" : "Shawn",
     } 
 
+    # If valid csv file present as command line, replace pairs with csv input
+    if len(sys.argv) == 2:
+        csvFile = sys.argv[1]
+        if not(csvFile.endswith(".csv")):
+            sys.exit("Invalid command-line parameter.")
+        else:
+            pairs = inputCSV(csvFile)
        
-    #pairs = inputCSV("myPairs.csv")        # Example using a pairs dictionary input from a csv file
-                                            # using the inputCSV() function above
     giftHat = GiftingHat(pairs)             # Example using a pairs dictionary defined in code
     giftPairs = giftHat.getGiftingPairs()   # If getGiftingPairs() fails, it returns "None"
     if giftPairs:
