@@ -40,7 +40,7 @@ This method takes no input parameters and will return a dictionary containing gi
 1. If self.crossGift is False, if A gives to B, then B cannot give to A. If True, cross-gifting is allowed.
 1. If self.spousalGift is False, a giver cannot give to their spouse or significant other. If True, spousal giving is allowed.
 
-If after 100 attempts, getGiftingPairs() fails to create a valid gift pair directory as defined by the rules above, it will return a value of "None".
+If after 100 attempts, getGiftingPairs() fails to create a valid gift pair dictionary as defined by the rules above, it will return a value of "None".
 
 #### output2File(self)
 This method receives no input parameters and manages the user interaction related to saving gifting pair results to a text file.
@@ -51,7 +51,7 @@ This method receives a text file name and returns True if the file exists in the
 ### Non-Class Functions
 #### inputCSV(csvFileName: str) -> dict:
 This function is not part of the GiftingHat class and is provided in the library for convenience.
-If "giftingHat.py" is imported to a user program, the inputCSV() function can be accessed in a manner similar to this:
+If "giftingHat.py" is imported into a user program, the inputCSV() function can be used in a manner similar to this:
 ```python
 pairs = giftingHat.inputCSV("filename.csv")
 myHat = giftingHat.GiftingHat(pairs)
