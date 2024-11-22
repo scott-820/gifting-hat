@@ -7,7 +7,7 @@ The GiftingHat() class is contained within the file "giftingHat.py", which inclu
 
 ### Class Methods
 #### __init__(self, namePairs, crossGift=False, spousalGift=False)
-The init method will build a GiftHat() object and from the namePairs dictionary input:
+The init method will build a GiftHat() object and from the namePairs dictionary input and then:
 * Construct a participants list -
     * The participants list will checked for uniqueness. If name conflicts are found, the user will be notified that the list of participants is not unique, and the program terminated.
 * Extend self.namePairs to contain bi-directional pairings - 
