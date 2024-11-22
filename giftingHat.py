@@ -190,13 +190,15 @@ def main():
         "Tom" : "",
     }
     '''
+   
+    # Enter the pairs and singles you would like to process in the dictionary below:
     pairs = {
         "Matt" : "Megan",
         "Brian" : "Cameron",
         "Jillian" : "Shawn",
     } 
 
-    # If valid csv file present as command line, replace pairs with csv input
+    # If valid csv file present as command line, pairs will be replaced with csv input
     if len(sys.argv) == 2:
         csvFile = sys.argv[1]
         if not(csvFile.endswith(".csv")):
