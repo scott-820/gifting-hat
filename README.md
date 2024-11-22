@@ -9,7 +9,7 @@ The GiftingHat() class is contained within the file "giftingHat.py", which inclu
 * ~~Add .csv file input via command line~~
 * Add requirement for .csv file header (NAME1, NAME2) to help with validation of .csv format
 <br>
-<br>
+
 ### Class Methods
 #### \_\_init__(self, namePairs, crossGift=False, spousalGift=False)
 The \_\_init__ method will build a GiftHat() object and from the namePairs dictionary input and then:
