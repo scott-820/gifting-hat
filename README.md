@@ -1,7 +1,9 @@
 # The Gifting Hat
 #### GiftingHat() is a Python class that accepts a dictionary of name pairs as a required input parameter and creates a gifting list for the group derived from the name pairs, and which conforms to a set of established and configurable rules.
 
-Many thanks to my children who deliberately scratched my Python itch by asking me to write this program for our family use.  They knew I couldn't resist...
+Many thanks to my children who deliberately scratched my Python itch by asking me to write this program for our family use.  It was a gift they knew I couldn't resist...
+
+The GiftingHat() class is contained within the file "giftingHat.py", which includes a main() function that exercises the class. Included in main() is the ability to accept a .csv file from the command line as input to the program.  See the section below regarding the inputCSV() function for usage and .csv formatting requirements.
 
 ### Class Methods
 #### __init__(self, namePairs, crossGift=False, spousalGift=False)
