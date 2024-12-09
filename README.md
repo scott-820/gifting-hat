@@ -7,7 +7,7 @@ The GiftingHat() class is contained within the file "giftingHat.py", which inclu
 
 ## To Do
 * ~~Add .csv file input via command line~~
-* Add requirement for .csv file header (NAME1, NAME2) to help with validation of .csv format
+* ~~Add requirement for .csv file header (Name,Spouse) to help with validation of .csv format~~
 <br>
 
 ### Class Methods
