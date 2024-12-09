@@ -169,7 +169,9 @@ def inputCSV(csvFileName: str) -> dict:
         sys.exit(f"{csvFileName} does not exist")
     else:
         reader = csv.DictReader(file)
-        
+        for field in reader.fieldnames:
+            if field not in ["Name","Spouse"]:
+                return False
         for row in reader:
             name = row["Name"]
             spouse = row["Spouse"]
@@ -208,6 +210,8 @@ def main():
             sys.exit("Invalid command-line parameter.")
         else:
             pairs = inputCSV(csvFile)
+            if not pairs:
+                sys.exit(f"{csvFile} contains incorrect header value(s)")
        
     giftHat = GiftingHat(pairs)             # Example using a pairs dictionary defined in code
     giftPairs = giftHat.getGiftingPairs()   # If getGiftingPairs() fails, it returns "None"
