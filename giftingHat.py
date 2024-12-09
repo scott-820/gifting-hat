@@ -143,7 +143,7 @@ def inputCSV(csvFileName: str) -> dict:
     "pairs" can be used to initialize a GiftingHat object of the class.
 
     Rules for creating a .csv file that defines pairs and singles for the GiftingHat class:
-    * No header is expected
+    * A header row is expected, which should be: "Name", "Spouse"
     * All names should be unique. If necessary, use firstnameLastname as name.  
         For example:
             "BobRoberts", "BobRoss" and "BobLoblaw" 
@@ -152,6 +152,7 @@ def inputCSV(csvFileName: str) -> dict:
 
     Here is an example of acceptable .csv content:
 
+    Name,Spouse
     Matt,Megan
     Brian,Cameron
     Jillian,Shawn
@@ -167,13 +168,15 @@ def inputCSV(csvFileName: str) -> dict:
     except FileNotFoundError:
         sys.exit(f"{csvFileName} does not exist")
     else:
-        reader = csv.reader(file)
-        # Check for correct headers once requirement is added
-        for name1, name2 in reader:
-            if name2 == "None" or name2 == "":
-                pairsD[name1] = None
+        reader = csv.DictReader(file)
+        
+        for row in reader:
+            name = row["Name"]
+            spouse = row["Spouse"]
+            if spouse == "None" or spouse == "":
+                pairsD[name] = None
             else:
-                pairsD[name1] = name2
+                pairsD[name] = spouse
         file.close()
     return pairsD       # Return a dictionary of pairs ready to pass into GiftingHat on initialization.
 

@@ -64,13 +64,14 @@ myHat = giftingHat.GiftingHat(pairs)
 If the rules below were followed in the creation of "filename.csv", then "pairs" can be used as a namePairs dictionary in the initialization a GiftingHat() object as shown in the code above.
 
 The rules for creating a .csv file that defines pairs and singles for the GiftingHat class are:
-* No header is expected
+* A header row is expected, which should be: "Name", "Spouse"
 * All names should be unique. If necessary, use firstnameLastname as name.  
     * For example: "BobRoberts", "BobRoss" and "BobLoblaw" are all unique.
 * Singles should have their name in the first column and "None" or blank in the second column.
 
 Here is an example of acceptable .csv content:
 ```
+Name,Spouse
 Matt,Megan
 Brian,Cameron
 Jillian,Shawn
