@@ -8,13 +8,14 @@ The GiftingHat() class is contained within the file "giftingHat.py", which inclu
 ## To Do
 * ~~Add .csv file input via command line~~
 * ~~Add requirement for .csv file header (Name,Spouse) to help with validation of .csv format~~
+* ~~Check for duplicate names in csv name-spouse pairs across all combinations before submitting to GiftingHat~~
 <br>
 
 ### Class Methods
 #### \_\_init__(self, namePairs, crossGift=False, spousalGift=False)
 The \_\_init__ method will build a GiftHat() object and from the namePairs dictionary input and then:
 * Construct a participants list -
-    * The participants list will checked for uniqueness. If name conflicts are found, the user will be notified that the list of participants is not unique, and the program terminated.
+    * Makes a true copy of the dictionary passed in during initialization so that it can be extended as part of the initialization process, as described next.
 * Extend self.namePairs to contain bi-directional pairings - 
     * For example: if key-value pair "A" : "B" is contained in namePairs originally, then key-value pair "B" : "A" will be added to the namePairs dictionary. This step simplifies the algorithm used in the getGiftingPairs() method to create the gifting list.
 

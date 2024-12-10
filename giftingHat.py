@@ -37,9 +37,6 @@ class GiftingHat():
                 self.namePairs[namePairs[name]] = name
             else:
                 self.namePairs[name] = name
-        # Check for uniquness in list of participants
-        if len(self.participants) > len(set(self.participants)):
-            sys.exit("List of participants is not unique")
         self.giftPairs = {}                     # Make an empty dictionary that holds giver : receiver pairs
 
     def getGiftingPairs(self):
@@ -171,14 +168,27 @@ def inputCSV(csvFileName: str) -> dict:
         reader = csv.DictReader(file)
         for field in reader.fieldnames:
             if field not in ["Name","Spouse"]:
+                print(f"{csvFileName} header value(s) are not correct")
                 return False
+        
+        # Test for duplicate "Names" as you can't check after a dictionary has been made - duplicate keys are not allowed!
+        # Also check for duplicates across "Name" and "Spouse", excluding "Spouse" = None or blank
+        participants = []
         for row in reader:
             name = row["Name"]
+            if name in participants :
+                print(f"{csvFileName} has duplicate participant {name}")
+                return False
+            participants.append(name)
             spouse = row["Spouse"]
+            if spouse in participants:
+                print(f"{csvFileName} has duplicate participant {spouse}")
+                return False            
             if spouse == "None" or spouse == "":
                 pairsD[name] = None
             else:
                 pairsD[name] = spouse
+                participants.append(spouse)
         file.close()
     return pairsD       # Return a dictionary of pairs ready to pass into GiftingHat on initialization.
 
@@ -210,8 +220,8 @@ def main():
             sys.exit("Invalid command-line parameter.")
         else:
             pairs = inputCSV(csvFile)
-            if not pairs:
-                sys.exit(f"{csvFile} contains incorrect header value(s)")
+            if pairs == False:
+                sys.exit(f"{csvFile} is not correctly formatted")
        
     giftHat = GiftingHat(pairs)             # Example using a pairs dictionary defined in code
     giftPairs = giftHat.getGiftingPairs()   # If getGiftingPairs() fails, it returns "None"
