@@ -15,7 +15,6 @@ The GiftingHat() class is contained within the file "giftingHat.py", which inclu
 #### \_\_init__(self, namePairs, crossGift=False, spousalGift=False)
 The \_\_init__ method will build a GiftHat() object and from the namePairs dictionary input and then:
 * Construct a participants list -
-    * Makes a true copy of the dictionary passed in during initialization so that it can be extended as part of the initialization process, as described next.
 * Extend self.namePairs to contain bi-directional pairings - 
     * For example: if key-value pair "A" : "B" is contained in namePairs originally, then key-value pair "B" : "A" will be added to the namePairs dictionary. This step simplifies the algorithm used in the getGiftingPairs() method to create the gifting list.
 
@@ -24,7 +23,7 @@ The \_\_init__ method will build a GiftHat() object and from the namePairs dicti
     * Names (either key or value) used in the input namePairs dictionary must all be unique. Use a naming strategy like: "BobRoberts", "BobRoss", "BobLoblaw" if necessary.
     * Singles are represented with key-value pairs of:
         * "name" : "None", or
-        * "name" : "".
+        * "name" : ""
 * crossGift : bool - Optional. True allows scenarios where A gives to B and B gives to A. Default is False.
 * spousalGift : bool - Optional. True allows participants to give to their spouse or significant other. Default is False.
 
